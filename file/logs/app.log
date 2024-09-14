@@ -1,0 +1,138 @@
+2024-09-14T22:27:31.667+08:00  INFO 1463 --- [Storage073] [main] com.storage073.Storage073Application     : Starting Storage073Application using Java 17.0.8 with PID 1463 (/Users/lingyikong/Downloads/Storage073/target/classes started by lingyikong in /Users/lingyikong/Downloads/Storage073)
+2024-09-14T22:27:31.670+08:00  INFO 1463 --- [Storage073] [main] com.storage073.Storage073Application     : No active profile set, falling back to 1 default profile: "default"
+2024-09-14T22:27:31.944+08:00  INFO 1463 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-14T22:27:31.946+08:00  INFO 1463 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-14T22:27:31.962+08:00  INFO 1463 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-09-14T22:27:32.253+08:00  INFO 1463 --- [Storage073] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-14T22:27:32.258+08:00  INFO 1463 --- [Storage073] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-14T22:27:32.258+08:00  INFO 1463 --- [Storage073] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-14T22:27:32.280+08:00  INFO 1463 --- [Storage073] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-09-14T22:27:32.280+08:00  INFO 1463 --- [Storage073] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 589 ms
+2024-09-14T22:27:32.842+08:00  INFO 1463 --- [Storage073] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-09-14T22:27:32.847+08:00  INFO 1463 --- [Storage073] [main] com.storage073.Storage073Application     : Started Storage073Application in 1.4 seconds (process running for 1.645)
+2024-09-14T22:28:21.578+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-14T22:28:21.581+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-14T22:28:21.603+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2024-09-14T22:28:21.656+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:28:21.657+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/3.jpg
+2024-09-14T22:28:21.656+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-1] com.storage073.aspect.OperationAspect    : Interceptor error
+
+com.storage073.exception.BusinessException: 登录超时，请重新登录
+
+2024-09-14T22:28:21.659+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-2] com.storage073.aspect.OperationAspect    : Interceptor error
+
+com.storage073.exception.BusinessException: 登录超时，请重新登录
+
+2024-09-14T22:28:29.405+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.s.controller.CheckCodeController       : Image Code IRDXD
+2024-09-14T22:28:29.412+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.s.controller.CheckCodeController       : Generate image code session id: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:28:39.307+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.s.controller.CheckCodeController       : Image Code GJ0GS
+2024-09-14T22:28:39.308+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.s.controller.CheckCodeController       : Generate image code session id: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:28:49.884+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] c.storage073.controller.UserController   : Session ID: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:28:49.918+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariCPDatasource - Starting...
+2024-09-14T22:28:50.224+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.zaxxer.hikari.pool.HikariPool        : HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@567c3a2d
+2024-09-14T22:28:50.225+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariCPDatasource - Start completed.
+2024-09-14T22:28:50.257+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.storage073.service.UserService       : User: User(userId=5, username=kkk, email=kongkong073@163.com, passwordHash=$2a$12$Yp5h62VHByiwllHZVugyFugDH4NlrxUSPNa6oxTu2spAxhI6Kkdbm, createdAt=Wed Aug 21 04:40:34 CST 2024, lastLoginAt=null, phoneNumber=null, avatar=, status=1, useSpace=0, totalSpace=5242880)
+2024-09-14T22:28:50.257+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-7] com.storage073.aspect.OperationAspect    : Interceptor error
+
+com.storage073.exception.BusinessException: 账号或密码错误。
+
+2024-09-14T22:28:50.266+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-8] c.s.controller.CheckCodeController       : Image Code YTKLK
+2024-09-14T22:28:50.266+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-8] c.s.controller.CheckCodeController       : Generate image code session id: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:02.269+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] c.storage073.controller.UserController   : Session ID: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:02.299+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] com.storage073.service.UserService       : User: User(userId=5, username=kkk, email=kongkong073@163.com, passwordHash=$2a$12$Yp5h62VHByiwllHZVugyFugDH4NlrxUSPNa6oxTu2spAxhI6Kkdbm, createdAt=Wed Aug 21 04:40:34 CST 2024, lastLoginAt=null, phoneNumber=null, avatar=, status=1, useSpace=0, totalSpace=5242880)
+2024-09-14T22:29:02.299+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-9] com.storage073.aspect.OperationAspect    : Interceptor error
+
+com.storage073.exception.BusinessException: 账号或密码错误。
+
+2024-09-14T22:29:02.310+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] c.s.controller.CheckCodeController       : Image Code 6250X
+2024-09-14T22:29:02.310+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] c.s.controller.CheckCodeController       : Generate image code session id: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:13.008+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] c.storage073.controller.UserController   : Session ID: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:13.040+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] com.storage073.service.UserService       : User: User(userId=5, username=kkk, email=kongkong073@163.com, passwordHash=$2a$12$Yp5h62VHByiwllHZVugyFugDH4NlrxUSPNa6oxTu2spAxhI6Kkdbm, createdAt=Wed Aug 21 04:40:34 CST 2024, lastLoginAt=null, phoneNumber=null, avatar=, status=1, useSpace=0, totalSpace=5242880)
+2024-09-14T22:29:13.040+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-1] com.storage073.aspect.OperationAspect    : Interceptor error
+
+com.storage073.exception.BusinessException: 账号或密码错误。
+
+2024-09-14T22:29:13.050+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] c.s.controller.CheckCodeController       : Image Code NUMI6
+2024-09-14T22:29:13.050+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] c.s.controller.CheckCodeController       : Generate image code session id: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:45.944+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] c.storage073.controller.UserController   : Session ID: 5052BBC49C47CB9D7CD506E806A9D478
+2024-09-14T22:29:45.957+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] com.storage073.service.UserService       : User: User(userId=2, username=kong, email=kong073@126.com, passwordHash=9624d181197ac9fcc2d64c20db90b688, createdAt=Sun Aug 18 18:33:46 CST 2024, lastLoginAt=Mon Aug 26 21:01:08 CST 2024, phoneNumber=null, avatar=, status=1, useSpace=0, totalSpace=5242880)
+2024-09-14T22:29:46.346+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-4] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:29:46.346+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-4] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/2.jpg
+2024-09-14T22:29:46.364+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:29:46.425+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=0, totalSpace=5242880)
+2024-09-14T22:29:51.857+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:29:52.004+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-7] com.storage073.service.FileService       : 文件上传失败 - 1
+
+com.storage073.exception.BusinessException: 网盘空间不足，请扩容
+
+2024-09-14T22:30:26.196+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-8] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:30:26.362+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-8] com.storage073.service.FileService       : 文件上传失败 - 1
+
+com.storage073.exception.BusinessException: 网盘空间不足，请扩容
+
+2024-09-14T22:30:30.906+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:30:30.907+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/2.jpg
+2024-09-14T22:30:30.929+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:30:30.932+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=0, totalSpace=5242880)
+2024-09-14T22:30:34.224+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:30:34.360+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-2] com.storage073.service.FileService       : 文件上传失败 - 1
+
+com.storage073.exception.BusinessException: 网盘空间不足，请扩容
+
+2024-09-14T22:30:54.100+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:30:54.104+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/2.jpg
+2024-09-14T22:30:54.128+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:30:54.143+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=0, totalSpace=5242880)
+2024-09-14T22:30:54.775+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:30:54.775+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-5] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/2.jpg
+2024-09-14T22:30:54.791+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:30:54.792+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=0, totalSpace=5242880)
+2024-09-14T22:30:59.177+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:30:59.300+08:00 ERROR 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 文件上传失败 - 1
+
+com.storage073.exception.BusinessException: 网盘空间不足，请扩容
+
+2024-09-14T22:31:08.209+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] c.s.controller.CheckCodeController       : Image Code 97A2N
+2024-09-14T22:31:08.210+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] c.s.controller.CheckCodeController       : Generate image code session id: 2578CDFA904EB611D8096DF712B9D1CB
+2024-09-14T22:31:14.545+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] c.storage073.controller.UserController   : Session ID: 2578CDFA904EB611D8096DF712B9D1CB
+2024-09-14T22:31:14.581+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] com.storage073.service.UserService       : User: User(userId=2, username=kong, email=kong073@126.com, passwordHash=9624d181197ac9fcc2d64c20db90b688, createdAt=Sun Aug 18 18:33:46 CST 2024, lastLoginAt=Sat Sep 14 22:29:46 CST 2024, phoneNumber=null, avatar=, status=1, useSpace=0, totalSpace=524288000)
+2024-09-14T22:31:14.670+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:31:14.672+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-6] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=0, totalSpace=524288000)
+2024-09-14T22:31:18.944+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-3] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:31:19.384+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 上传最后一个分片：44.......................
+2024-09-14T22:31:19.401+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : autoRename - count: 0
+2024-09-14T22:31:19.411+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 事务提交完成，准备合并分片...............................
+2024-09-14T22:31:19.414+08:00  INFO 1463 --- [Storage073] [Async-1] com.storage073.service.FileService       : 进入transferFile...............................
+2024-09-14T22:31:19.418+08:00  INFO 1463 --- [Storage073] [Async-1] com.storage073.service.FileService       : 临时目录： /Users/lingyikong/Downloads/Storage073/file//temp/2-WuJFojwQ2g
+2024-09-14T22:31:19.418+08:00  INFO 1463 --- [Storage073] [Async-1] com.storage073.service.FileService       : 持久化路径： /Users/lingyikong/Downloads/Storage073/file/persist/2024-09/2-WuJFojwQ2g.pdf
+2024-09-14T22:31:19.418+08:00  INFO 1463 --- [Storage073] [Async-1] com.storage073.service.FileService       : 开始合并分片...............................
+2024-09-14T22:31:19.425+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:31:19.425+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-1] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=23208229, totalSpace=524288000)
+2024-09-14T22:31:32.400+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] c.storage073.controller.UserController   : Avatar folder path:/Users/lingyikong/Downloads/Storage073/file/avatar/
+2024-09-14T22:31:32.406+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-2] c.storage073.controller.UserController   : Avatar path:/Users/lingyikong/Downloads/Storage073/file/avatar/2.jpg
+2024-09-14T22:31:32.415+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-4] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:31:32.418+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-4] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=23208229, totalSpace=524288000)
+2024-09-14T22:36:01.348+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-7] com.storage073.service.FileService       : 第一个分片到达..................
+2024-09-14T22:36:01.438+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 上传最后一个分片：3.......................
+2024-09-14T22:36:01.448+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : autoRename - count: 0
+2024-09-14T22:36:01.480+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-10] com.storage073.service.FileService       : 事务提交完成，准备合并分片...............................
+2024-09-14T22:36:01.483+08:00  INFO 1463 --- [Storage073] [Async-2] com.storage073.service.FileService       : 进入transferFile...............................
+2024-09-14T22:36:01.485+08:00  INFO 1463 --- [Storage073] [Async-2] com.storage073.service.FileService       : 临时目录： /Users/lingyikong/Downloads/Storage073/file//temp/2-SzLFwRvnvc
+2024-09-14T22:36:01.486+08:00  INFO 1463 --- [Storage073] [Async-2] com.storage073.service.FileService       : 持久化路径： /Users/lingyikong/Downloads/Storage073/file/persist/2024-09/2-SzLFwRvnvc.pdf
+2024-09-14T22:36:01.486+08:00  INFO 1463 --- [Storage073] [Async-2] com.storage073.service.FileService       : 开始合并分片...............................
+2024-09-14T22:36:01.496+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] c.storage073.controller.UserController   : sessionWebUserDto: SessionWebUserDto(userName=kong, userId=2, isAdmin=true, avatar=)
+2024-09-14T22:36:01.496+08:00  INFO 1463 --- [Storage073] [http-nio-8080-exec-9] c.storage073.controller.UserController   : userSpaceDto: UserSpaceDto(useSpace=25213734, totalSpace=524288000)
+2024-09-14T22:49:54.110+08:00  INFO 1463 --- [Storage073] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariCPDatasource - Shutdown initiated...
+2024-09-14T22:49:54.233+08:00  INFO 1463 --- [Storage073] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariCPDatasource - Shutdown completed.
+2024-09-14T22:49:56.633+08:00  INFO 1724 --- [Storage073] [main] com.storage073.Storage073Application     : Starting Storage073Application using Java 17.0.8 with PID 1724 (/Users/lingyikong/Downloads/Storage073/target/classes started by lingyikong in /Users/lingyikong/Downloads/Storage073)
+2024-09-14T22:49:56.634+08:00  INFO 1724 --- [Storage073] [main] com.storage073.Storage073Application     : No active profile set, falling back to 1 default profile: "default"
+2024-09-14T22:49:56.893+08:00  INFO 1724 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-14T22:49:56.894+08:00  INFO 1724 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-14T22:49:56.907+08:00  INFO 1724 --- [Storage073] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-09-14T22:49:57.264+08:00  INFO 1724 --- [Storage073] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-14T22:49:57.270+08:00  INFO 1724 --- [Storage073] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-14T22:49:57.270+08:00  INFO 1724 --- [Storage073] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-14T22:49:57.293+08:00  INFO 1724 --- [Storage073] [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2024-09-14T22:49:57.293+08:00  INFO 1724 --- [Storage073] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 640 ms
+2024-09-14T22:49:57.867+08:00  INFO 1724 --- [Storage073] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2024-09-14T22:49:57.873+08:00  INFO 1724 --- [Storage073] [main] com.storage073.Storage073Application     : Started Storage073Application in 1.414 seconds (process running for 1.658)
