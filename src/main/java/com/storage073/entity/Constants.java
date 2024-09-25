@@ -18,7 +18,7 @@ public class Constants {
     // Redis
     public static final String REDIS_KEY_SYS_SETTING = "storage073:syssetting:";
     public static final String REDIS_KEY_USER_SPACE_USE = "storage073:user:spaceuse:";
-    public static final String REDIS_KEY_USER_FILE_TEMP_SIZE = "easypan:user:file:temp:";
+    public static final String REDIS_KEY_USER_FILE_TEMP_SIZE = "storage073:user:file:temp:";
     public static final Integer REDIS_KEY_EXPIRES_ONE_MIN = 60;
     public static final Integer REDIS_KEY_EXPIRES_ONE_HOUR = REDIS_KEY_EXPIRES_ONE_MIN * 60;
     public static final Integer REDIS_KEY_EXPIRES_DAY = REDIS_KEY_EXPIRES_ONE_MIN * 60 * 24;
@@ -32,8 +32,8 @@ public class Constants {
     //文件路径相关
     public static final String FILE_FOLDER_AVATAR_NAME = "avatar/";
     public static final String FILE_FOLDER_FILE = "/file/";
-    public static final String FILE_FOLDER_TEMP = "/temp/";
-    public static final String FILE_FOLDER_PERSIST = "/persist/";
+    public static final String FILE_FOLDER_TEMP = "/multipart_temp/";
+    public static final String FILE_FOLDER_PERSIST = "/union_temp/";
 
 
     //头像
@@ -43,4 +43,8 @@ public class Constants {
 
     //文件相关
     public static final int FILEID_Length= 10;
+
+    // oss分片上传
+    public static final String REDIS_KEY_UPLOAD_ID = "storage073:oss:uploadID:";
+    public static final String REDIS_KEY_PART_ETAG = "storage073:oss:partETag:";
 }

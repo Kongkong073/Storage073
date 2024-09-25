@@ -1,13 +1,20 @@
 package com.storage073.component;
 
 
+import com.aliyun.oss.model.PartETag;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.storage073.entity.dto.SysSettingsDto;
 import com.storage073.entity.dto.UserSpaceDto;
 import com.storage073.mapper.FileMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.storage073.entity.Constants;
 import jakarta.annotation.Resource;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /*
@@ -22,6 +29,9 @@ public class RedisComponent {
 
     @Resource
     private FileMapper fileMapper;
+
+    @Autowired
+    private ObjectMapper objectMapper1;
     /**
      * 获取系统设置
      *
@@ -56,17 +66,31 @@ public class RedisComponent {
         redisUtils.setex(Constants.REDIS_KEY_USER_SPACE_USE + userId, userSpaceDto, Constants.REDIS_KEY_EXPIRES_DAY);
     }
 
+//    public UserSpaceDto getUserSpaceUse(String userId) {
+//        UserSpaceDto spaceDto = (UserSpaceDto) redisUtils.get(Constants.REDIS_KEY_USER_SPACE_USE + userId);
+//        if (null == spaceDto) {
+//            log.info("进入null == spaceDto");
+//            spaceDto = new UserSpaceDto();
+//            Long useSpace = fileMapper.getUseSpaceByUserId(userId);
+//            spaceDto.setUseSpace(useSpace);
+//            spaceDto.setTotalSpace(getSysSettingsDto().getUserInitUseSpace() * Constants.MB);
+//            redisUtils.setex(Constants.REDIS_KEY_USER_SPACE_USE + userId, spaceDto, Constants.REDIS_KEY_EXPIRES_DAY);
+//        }
+////        log.info("userSpaceDto - Redis: " + spaceDto.toString());
+//        return spaceDto;
+//    }
+
     public UserSpaceDto getUserSpaceUse(String userId) {
-        UserSpaceDto spaceDto = (UserSpaceDto) redisUtils.get(Constants.REDIS_KEY_USER_SPACE_USE + userId);
-        if (null == spaceDto) {
+        String key = Constants.REDIS_KEY_USER_SPACE_USE + userId;
+        UserSpaceDto spaceDto = (UserSpaceDto) redisUtils.get(key, UserSpaceDto.class);  // 指定反序列化为 UserSpaceDto
+        if (spaceDto == null) {
             log.info("进入null == spaceDto");
             spaceDto = new UserSpaceDto();
             Long useSpace = fileMapper.getUseSpaceByUserId(userId);
             spaceDto.setUseSpace(useSpace);
             spaceDto.setTotalSpace(getSysSettingsDto().getUserInitUseSpace() * Constants.MB);
-            redisUtils.setex(Constants.REDIS_KEY_USER_SPACE_USE + userId, spaceDto, Constants.REDIS_KEY_EXPIRES_DAY);
+            redisUtils.setex(key, spaceDto, Constants.REDIS_KEY_EXPIRES_DAY);
         }
-//        log.info("userSpaceDto - Redis: " + spaceDto.toString());
         return spaceDto;
     }
 
@@ -95,4 +119,55 @@ public class RedisComponent {
 
         return 0L;
     }
+
+    public String getUploadId(String userId, String fileId) {
+        String key = Constants.REDIS_KEY_UPLOAD_ID + userId + ":" + fileId;
+        return (String) redisUtils.get(key);
+    }
+
+    public void saveUploadId(String userId, String fileId, String uploadId) {
+        String key = Constants.REDIS_KEY_UPLOAD_ID + userId + ":" + fileId;
+        redisUtils.setex(key, uploadId, Constants.REDIS_KEY_EXPIRES_ONE_HOUR); // 设置过期时间为 1 小时
+    }
+
+    public void deleteUploadId(String userId, String fileId) {
+        String key = Constants.REDIS_KEY_UPLOAD_ID + userId + ":" + fileId;
+        redisUtils.delete(key);
+    }
+
+
+    public void savePartETag(String userId, String fileId, Integer chunkIndex, PartETag partETag) {
+        String key = Constants.REDIS_KEY_PART_ETAG + userId + ":" + fileId;
+        List<PartETag> partETags = (ArrayList<PartETag>) redisUtils.get(key, new TypeReference<List<PartETag>>() {});
+        // 获取当前的 PartETag 列表
+//        List<Object> partETags = (ArrayList<Object>) redisUtils.get(key, new TypeReference<List<Object>>() {});
+
+        if (partETags == null) {
+            partETags = new ArrayList<>();
+        }
+
+        // 如果分片索引已经存在，替换对应的分片信息
+        if (chunkIndex < partETags.size()) {
+            partETags.set(chunkIndex, partETag);
+        } else {
+            partETags.add(partETag);
+        }
+
+        redisUtils.setex(key, partETags, Constants.REDIS_KEY_EXPIRES_ONE_HOUR); // 设置过期时间
+    }
+
+
+    public List<PartETag> getPartETags(String userId, String fileId) {
+        String key = Constants.REDIS_KEY_PART_ETAG + userId + ":" + fileId;
+        List<PartETag> result = (ArrayList<PartETag>) redisUtils.get(key, new TypeReference<List<PartETag>>() {});
+//        List<Object> partETags = (ArrayList<Object>) redisUtils.get(key, new TypeReference<List<Object>>() {});
+//        // 新建List<PartETag>，待返回
+//        List<PartETag> result = new ArrayList<>();
+//
+//        for(Object e: partETags){
+//            result.add(objectMapper1.convertValue(e, PartETag.class));
+//        }
+        return result;
+    }
+
 }

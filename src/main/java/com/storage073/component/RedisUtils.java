@@ -1,12 +1,19 @@
 package com.storage073.component;
 
+import com.aliyun.oss.model.PartETag;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import jakarta.annotation.Resource;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -16,6 +23,8 @@ public class RedisUtils<V> {
     @Resource
     private RedisTemplate<String, V> redisTemplate;
 
+    @Autowired
+    private ObjectMapper objectMapper;
 
     /**
      * 删除缓存
@@ -34,6 +43,24 @@ public class RedisUtils<V> {
 
     public V get(String key) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
+    }
+
+    public <T> T get(String key, TypeReference<T> typeReference) {
+        Object value = redisTemplate.opsForValue().get(key);
+        if (value != null) {
+            // 使用 ObjectMapper 将 Redis 中的值转换为目标类型
+            return objectMapper.convertValue(value, typeReference);
+        }
+        return null;
+    }
+
+    public <T> T get(String key, Class<T> clazz){
+        Object value = redisTemplate.opsForValue().get(key);
+        if (value != null) {
+            // 使用 ObjectMapper 将 LinkedHashMap 转换为目标类型
+            return objectMapper.convertValue(value, clazz);
+        }
+        return clazz.cast(value);
     }
 
     /**
