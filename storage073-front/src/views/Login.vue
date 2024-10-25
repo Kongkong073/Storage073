@@ -174,6 +174,12 @@
         <!-- <div class="login-btn-qq" v-if="opType == 1">
           快捷登录 <img src="@/assets/qq.png" @click="qqLogin" />
         </div> -->
+        <div style="text-align: center; margin: 40px;">
+          <a href="https://github.com/Kongkong073/Storage073" target="_blank" style="color: #000; display: inline-flex; align-items: center; text-decoration: none;">
+        <img src="/github.svg" alt="GitHub" style="width: 20px; margin-right: 8px;" /> To Github Repository
+      </a>
+    </div>
+
       </el-form>
     </div>
     <!--发送邮箱验证码-->
